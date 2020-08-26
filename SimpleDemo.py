@@ -1,6 +1,11 @@
 # Databricks notebook source
 # MAGIC %sql
-# MAGIC select color,sum(carat) as tcarats from diamonds group by color order by tcarats
+# MAGIC select color,sum(carat) as tcarats from lynch.diamonds group by color order by tcarats
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select * from lynch.diamonds;
 
 # COMMAND ----------
 
@@ -13,3 +18,7 @@ result = newDf.groupby('color').agg(sum(newDf["caratd"]))
 
 
 display(result)
+
+# COMMAND ----------
+
+print(df.count())
